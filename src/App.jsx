@@ -68,13 +68,12 @@ import React, { useState, useRef, useEffect } from 'react';
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'wiazka.txt';
+        link.download = '0lista.txt';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
       };
-
 
       const copyFirstResult = () => {
         if (filteredData.length === 0) return;
@@ -157,8 +156,8 @@ import React, { useState, useRef, useEffect } from 'react';
             event.preventDefault();
             searchInputRef.current.focus();
           } else if (event.ctrlKey && event.key === 'c') {
-             event.preventDefault();
-             copyFirstColumnValues();
+            event.preventDefault();
+            copyFirstColumnValues();
           } else if (event.ctrlKey && event.key === 'h') {
             event.preventDefault();
             copyFirstResult();
